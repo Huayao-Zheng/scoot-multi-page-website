@@ -1,5 +1,6 @@
 @use '../function' as *;
 @use '../variables' as *;
+@use '../mixins' as *;
 
 .nav {
     position: fixed;
@@ -17,7 +18,8 @@
         cursor: pointer;
     }
 
-    &__menu--close {
+    &__menu--close,
+    &__desktop-nav {
         display: none;
     }
 
@@ -27,7 +29,6 @@
     }
 
     // background overlay
-
     &.active-menu::before,
     &.active-menu &__menu {
         left: 0;
@@ -70,38 +71,33 @@
     }
 }
 
-$yellow: #fcb72b;
-$dark-navy: #495567;
-$dim-grey: #939caa;
-$light-grey: #e5ecf4;
-$snow: #f2f5f9;
-$light-yellow: #fff4df;
+/* ================= Breakpoints (tablet and up) ================= */
+@include breakpoint-up(medium) {
+    .nav {
+        gap: rem(58);
 
-/*
-        <header>
-            <nav class="nav container">
-                <img src="./assets/icons/hamburger.svg" alt="hamburger" class="nav__menu--open" />
-                <img src="./assets/icons/close.svg" alt="close" class="nav__menu--close" />
+        &__menu--close,
+        &__menu--open,
+        &::before,
+        &__menu {
+            display: none !important;
+        }
 
-                <a href="index.html" class="nav__logo">
-                    <img src="./assets/logo.svg" alt="logo" />
-                </a>
+        &__logo {
+            margin: 0;
+            width: rem(107);
+        }
 
-                <div class="nav__menu">
-                    <ul class="nav__list">
-                        <li class="nav__item">
-                            <a href="about.html" class="nav__link">About</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="locations.html" class="nav__link">Location</a>
-                        </li>
-                        <li class="nav__item">
-                            <a href="careers.html" class="nav__link">Careers</a>
-                        </li>
-                    </ul>
+        &__desktop-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
 
-                    <a href="#app-download" class="btn">Get Scootin</a>
-                </div>
-            </nav>
-        </header>
-*/
+        &__desktop-list {
+            display: flex;
+            gap: 2rem;
+        }
+    }
+}
