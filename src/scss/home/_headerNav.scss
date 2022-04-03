@@ -37,13 +37,14 @@
     &::before {
         content: '';
         position: fixed;
-        top: 0;
+        top: rem(68);
         left: -100vw;
         width: 100vw;
-        height: 100vh;
+        height: calc(100vh - rem(68));
         background-color: rgba(#000, 0.75);
         z-index: -1;
         transition: 0.4s;
+        z-index: 5;
     }
 
     &__menu {
@@ -58,6 +59,7 @@
         justify-content: space-between;
         font-size: rem(18);
         transition: 0.4s;
+        z-index: 10;
     }
 
     &__list {

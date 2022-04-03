@@ -1,0 +1,136 @@
+@use '../function' as *;
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.hero {
+    background: url(./assets/images/home-hero-desktop.jpg) no-repeat top 0 right 0;
+    height: rem(650);
+    position: relative;
+    padding-top: rem(115);
+    text-align: center;
+    color: #fff;
+
+    &__title,
+    &__description {
+        max-width: rem(445);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__title {
+        font-size: rem(40);
+        line-height: rem(40);
+        letter-spacing: rem(-1.79);
+    }
+
+    &__description {
+        font-size: rem(15);
+        line-height: rem(25);
+        margin-top: rem(24);
+        margin-bottom: rem(34);
+    }
+
+    &__pattern-right-arrow {
+        bottom: 30px;
+        left: -327px;
+    }
+
+    &__pattern-line,
+    &__pattern-circles {
+        display: none;
+    }
+}
+
+/* ================= Breakpoints (tablet) ================= */
+@include breakpoint-up(medium) {
+    .hero {
+        padding-top: rem(137);
+
+        &__title,
+        &__description {
+            max-width: rem(573);
+        }
+
+        &__title {
+            font-size: rem(56);
+            line-height: rem(56);
+            letter-spacing: rem(-2.5);
+        }
+
+        &__pattern-right-arrow {
+            bottom: 30px;
+            left: -142px;
+        }
+
+        &__pattern-circles {
+            display: block;
+            bottom: 45px;
+            right: -31px;
+        }
+    }
+}
+
+/* ================= Breakpoints (desktop) ================= */
+@include breakpoint-up(large) {
+    .hero {
+        max-width: rem(1440);
+        margin-left: auto;
+        margin-right: auto;
+        overflow: hidden;
+        padding-top: rem(153);
+        text-align: left;
+
+        &__title {
+            margin: 0;
+        }
+
+        &__description,
+        .btn {
+            margin-left: rem(93);
+        }
+
+        &__description {
+            max-width: rem(405);
+            position: relative;
+        }
+
+        &__pattern-line {
+            display: block;
+            top: 50%;
+            left: -57px;
+            transform: translate(-100%, -50%);
+        }
+
+        &__pattern-right-arrow {
+            bottom: 60px;
+            left: auto;
+            right: 220px;
+        }
+
+        &__pattern-circles {
+            display: block;
+            bottom: 75px;
+            right: -31px;
+        }
+    }
+}
+
+/* ================= Breakpoints (x-large desktop) ================= */
+@include breakpoint-up(x-large) {
+    .hero {
+        &__pattern-right-arrow {
+            bottom: 157px;
+            right: 288px;
+        }
+
+        &__pattern-circles {
+            bottom: 164.5px;
+            right: -48px;
+        }
+
+        &__description {
+            margin-top: rem(40);
+            margin-bottom: rem(40);
+        }
+    }
+}
