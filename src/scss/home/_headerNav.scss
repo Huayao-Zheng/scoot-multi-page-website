@@ -1,0 +1,107 @@
+@use '../function' as *;
+@use '../variables' as *;
+
+.nav {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    background-color: #fff;
+    position: relative;
+
+    &__menu--close,
+    &__menu--open {
+        position: absolute;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    &__menu--close {
+        display: none;
+    }
+
+    &__logo {
+        margin: 0 auto;
+        width: rem(75.5);
+    }
+
+    // background overlay
+
+    &.active-menu::before,
+    &.active-menu &__menu {
+        left: 0;
+    }
+
+    &::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: -100vw;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(#000, 0.75);
+        z-index: -1;
+        transition: 0.4s;
+    }
+
+    &__menu {
+        position: fixed;
+        top: rem(68);
+        left: -100vw;
+        height: calc(100vh - rem(68));
+        background-color: $dark-navy;
+        padding: 4rem 2rem 1.5rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-size: rem(18);
+        transition: 0.4s;
+    }
+
+    &__list {
+        display: grid;
+        gap: 1.5rem;
+    }
+
+    &__link {
+        display: block;
+        color: $light-grey;
+    }
+}
+
+$yellow: #fcb72b;
+$dark-navy: #495567;
+$dim-grey: #939caa;
+$light-grey: #e5ecf4;
+$snow: #f2f5f9;
+$light-yellow: #fff4df;
+
+/*
+        <header>
+            <nav class="nav container">
+                <img src="./assets/icons/hamburger.svg" alt="hamburger" class="nav__menu--open" />
+                <img src="./assets/icons/close.svg" alt="close" class="nav__menu--close" />
+
+                <a href="index.html" class="nav__logo">
+                    <img src="./assets/logo.svg" alt="logo" />
+                </a>
+
+                <div class="nav__menu">
+                    <ul class="nav__list">
+                        <li class="nav__item">
+                            <a href="about.html" class="nav__link">About</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="locations.html" class="nav__link">Location</a>
+                        </li>
+                        <li class="nav__item">
+                            <a href="careers.html" class="nav__link">Careers</a>
+                        </li>
+                    </ul>
+
+                    <a href="#app-download" class="btn">Get Scootin</a>
+                </div>
+            </nav>
+        </header>
+*/
