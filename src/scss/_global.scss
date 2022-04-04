@@ -21,6 +21,9 @@ body {
 
 p {
     font-family: 'Lexend Deca', sans-serif;
+    font-size: rem(15);
+    line-height: rem(25);
+    color: $dim-grey;
 }
 
 img {
@@ -52,9 +55,9 @@ a:hover {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 180px;
-    height: 53px;
-    font-size: 15px;
+    width: rem(180);
+    height: rem(53);
+    font-size: rem(15);
     color: #fff;
     background-color: $yellow;
     border: 3px solid $yellow;

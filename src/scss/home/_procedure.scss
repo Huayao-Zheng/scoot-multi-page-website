@@ -1,0 +1,110 @@
+@use '../function' as *;
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.procedure {
+    padding-top: rem(120);
+
+    &__grey-line-pattern {
+        display: none;
+    }
+
+    &__container {
+        display: grid;
+        row-gap: rem(48);
+    }
+
+    &__content,
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(24);
+    }
+
+    &__img {
+        width: rem(56);
+    }
+
+    &__title {
+        color: $dark-navy;
+        @include headingsTypography(h5);
+    }
+
+    &__description {
+        color: $dim-grey;
+        text-align: center;
+        max-width: rem(398);
+    }
+}
+
+/* ================= Breakpoints (tablet) ================= */
+@include breakpoint-up(medium) {
+    .procedure {
+        .pattern-holder {
+            position: relative;
+        }
+
+        &__grey-line-pattern {
+            display: block;
+            width: 15px;
+            height: 513px;
+            background-color: $light-grey;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -90%);
+            z-index: -1;
+        }
+
+        &__container {
+            row-gap: rem(40);
+        }
+
+        &__content {
+            flex-direction: row;
+            justify-content: center;
+            align-items: start;
+            gap: rem(79);
+        }
+
+        &__img {
+            width: rem(96);
+        }
+
+        &__info {
+            align-items: start;
+        }
+
+        &__title {
+            @include headingsTypography(h4);
+        }
+
+        &__description {
+            text-align: left;
+        }
+    }
+}
+
+/* ================= Breakpoints (desktop) ================= */
+@include breakpoint-up(large) {
+    .procedure {
+        &__grey-line-pattern {
+            width: 974px;
+            height: 15px;
+            top: 50%;
+            left: 0;
+            transform: translate(-96%, -50%);
+            z-index: -1;
+        }
+
+        &__container {
+            grid-template-columns: repeat(3, auto);
+            gap: rem(30);
+        }
+
+        &__content {
+            flex-direction: column;
+            gap: rem(40);
+        }
+    }
+}

@@ -3,12 +3,12 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+        <link rel="icon" type="svg" href="assets/logo.svg" />
         <link rel="stylesheet" href="main.min.css" />
         <title>Frontend Mentor | Scoot</title>
     </head>
     <body>
+        <!-- ======================= HEADER =======================  -->
         <header>
             <nav class="nav container">
                 <img src="./assets/icons/hamburger.svg" alt="hamburger" class="nav__menu--open" />
@@ -46,7 +46,9 @@
             </nav>
         </header>
 
+        <!-- ======================= MAIN =======================  -->
         <main>
+            <!-- ======================= HERO =======================  -->
             <section class="hero">
                 <div class="container">
                     <div class="hero__content">
@@ -55,6 +57,7 @@
                             Scoot takes the hassle out of urban mobility. Our bikes are placed in convenient
                             locations in each of our cities. Use our app to locate the nearest bike, unlock it
                             with a tap, and you’re away!
+                            <!-- svg-patterns -->
                             <svg
                                 class="hero__pattern-line absolute"
                                 xmlns="http://www.w3.org/2000/svg"
@@ -97,6 +100,54 @@
                             <circle cx="203" cy="31.5" r="31" fill="#FFF" />
                         </g>
                     </svg>
+                </div>
+            </section>
+
+            <!-- ======================= procedure =======================  -->
+            <section class="procedure">
+                <div class="procedure__container container">
+                    <div class="procedure__content">
+                        <img src="assets/icons/locate.svg" alt="locate icon" class="procedure__img" />
+
+                        <div class="procedure__info">
+                            <h4 class="procedure__title">Locate with app</h4>
+                            <p class="procedure__description">
+                                Use the app to find the nearest scooter to you. We are continuously placing
+                                scooters in the areas with most demand, so one should never be too far away.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="procedure__content">
+                        <img src="assets/icons/scooter.svg" alt="scooter icon" class="procedure__img" />
+
+                        <div class="procedure__info">
+                            <h4 class="procedure__title">Locate with app</h4>
+                            <p class="procedure__description">
+                                Use the app to find the nearest scooter to you. We are continuously placing
+                                scooters in the areas with most demand, so one should never be too far away.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="procedure__content">
+                        <div class="pattern-holder">
+                            <span class="procedure__grey-line-pattern absolute"></span>
+                            <img
+                                src="assets/icons/ride.svg"
+                                alt="riding scooter icon"
+                                class="procedure__img"
+                            />
+                        </div>
+
+                        <div class="procedure__info">
+                            <h4 class="procedure__title">Locate with app</h4>
+                            <p class="procedure__description">
+                                Use the app to find the nearest scooter to you. We are continuously placing
+                                scooters in the areas with most demand, so one should never be too far away.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
