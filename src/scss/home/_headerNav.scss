@@ -2,13 +2,27 @@
 @use '../variables' as *;
 @use '../mixins' as *;
 
-.nav {
+main {
+    padding-top: rem(68);
+}
+header {
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background-color: #fff;
+}
+
+header.scrolled {
+    box-shadow: 0 2px 4px hsla(0, 0%, 1%, 0.13);
+}
+
+.nav {
     display: flex;
     align-items: center;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    background-color: #fff;
     position: relative;
 
     &__menu--close,
@@ -75,6 +89,10 @@
 
 /* ================= Breakpoints (tablet and up) ================= */
 @include breakpoint-up(medium) {
+    main {
+        padding-top: rem(101);
+    }
+
     .nav {
         gap: rem(58);
 

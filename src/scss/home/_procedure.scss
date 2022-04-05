@@ -28,7 +28,7 @@
 
     &__title {
         color: $dark-navy;
-        @include headingsTypography(h5);
+        @include headingsTypography(h6);
     }
 
     &__description {
@@ -76,7 +76,7 @@
         }
 
         &__title {
-            @include headingsTypography(h4);
+            @include headingsTypography(h5);
         }
 
         &__description {

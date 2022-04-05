@@ -1,5 +1,6 @@
 @use 'variables' as *;
 @use 'function' as *;
+@use 'mixins' as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Space+Mono:wght@700&display=swap');
 
@@ -17,6 +18,10 @@ ul {
 
 body {
     font-family: 'Space Mono', monospace;
+}
+
+section {
+    overflow-x: hidden;
 }
 
 p {
@@ -71,4 +76,92 @@ a:hover {
 
 .absolute {
     position: absolute;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: rem(56);
+    @include breakpoint-up(medium) {
+    }
+
+    &__img-container {
+        position: relative;
+    }
+
+    &__img {
+        width: 100%;
+        max-width: rem(445);
+        border-radius: 50%;
+    }
+
+    &__circle,
+    &__arrow {
+        position: absolute;
+    }
+
+    &__circle {
+        top: 0;
+        transform: translateX(calc(100% + rem(64)));
+    }
+
+    &__arrow {
+        bottom: 0;
+        left: 0;
+    }
+
+    &__article {
+        text-align: center;
+    }
+
+    &__title {
+        color: $dark-navy;
+        max-width: rem(311);
+        margin-left: auto;
+        margin-right: auto;
+        @include headingsTypography(h4);
+    }
+
+    &__description {
+        margin: rem(32) auto;
+        max-width: rem(573);
+    }
+}
+
+/* ================= Breakpoints (tablet) ================= */
+@include breakpoint-up(medium) {
+    .block {
+        &__title {
+            max-width: rem(457);
+            @include headingsTypography(h2);
+        }
+
+        &__description {
+            margin-top: rem(40);
+            margin-bottom: rem(40);
+        }
+    }
+}
+
+/* ================= Breakpoints (desktop) ================= */
+@include breakpoint-up(large) {
+    .block {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+
+        &__img {
+            width: rem(445);
+        }
+
+        &__article {
+            text-align: left;
+        }
+
+        &__description {
+            margin: rem(24) 0 rem(40) 0;
+            max-width: rem(445);
+        }
+    }
 }

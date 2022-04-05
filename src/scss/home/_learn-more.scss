@@ -1,0 +1,73 @@
+@use '../function' as *;
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.learn-more {
+    max-width: 1440px;
+    margin: rem(120) auto;
+
+    &__container {
+        display: grid;
+        row-gap: rem(120);
+    }
+
+    .block:nth-of-type(2) {
+        .block__circle {
+            transform: translateX(calc(-100% - 4rem));
+        }
+
+        .block__arrow {
+            bottom: auto;
+            top: 0;
+            transform: translateX(-62%);
+        }
+    }
+
+    .block:nth-of-type(3) {
+        .block__arrow {
+            bottom: auto;
+            top: 0;
+            transform: translateX(17%);
+        }
+    }
+}
+
+/* ================= Breakpoints (tablet) ================= */
+@include breakpoint-up(medium) {
+    .learn-more {
+        margin-top: rem(104);
+        margin-bottom: rem(104);
+
+        .block:nth-of-type(3) {
+            .block__arrow {
+                transform: translateX(29%);
+            }
+        }
+    }
+}
+
+/* ================= Breakpoints (desktop) ================= */
+@include breakpoint-up(large) {
+    .learn-more {
+        margin-top: rem(200);
+        margin-bottom: rem(200);
+
+        &__container {
+            row-gap: rem(160);
+        }
+
+        .block:nth-of-type(1) {
+            .block__arrow {
+                transform: translateX(rem(-130));
+            }
+        }
+
+        .block:nth-of-type(2) {
+            flex-direction: row;
+
+            .block__arrow {
+                transform: translateX(-58%);
+            }
+        }
+    }
+}

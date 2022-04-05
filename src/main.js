@@ -17,3 +17,8 @@ function closeMenu() {
     menuOpenBtn.style.display = 'inline-block';
     menuCloseBtn.style.display = 'none';
 }
+
+/* ================= Apply shadow style to header when scroll down ================= */
+window.addEventListener('scroll', () => {
+    document.querySelector('header').classList.toggle('scrolled', window.scrollY > 0);
+});
