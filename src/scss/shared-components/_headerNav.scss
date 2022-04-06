@@ -2,9 +2,6 @@
 @use '../variables' as *;
 @use '../mixins' as *;
 
-main {
-    padding-top: rem(68);
-}
 header {
     position: fixed;
     top: 0;
@@ -14,8 +11,19 @@ header {
     background-color: #fff;
 }
 
+//  onScroll style
 header.scrolled {
     box-shadow: 0 2px 4px hsla(0, 0%, 1%, 0.13);
+}
+header.scrolled .nav {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+
+    &__menu,
+    &::before {
+        top: rem(44);
+        height: calc(100vh - rem(44));
+    }
 }
 
 .nav {
@@ -24,6 +32,7 @@ header.scrolled {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     position: relative;
+    transition: 0.2s;
 
     &__menu--close,
     &__menu--open {

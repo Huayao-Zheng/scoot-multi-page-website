@@ -7,12 +7,14 @@ menuOpenBtn.addEventListener('click', openMenu);
 menuCloseBtn.addEventListener('click', closeMenu);
 
 function openMenu() {
+    document.body.style.overflow = 'hidden';
     nav.classList.add('active-menu');
     menuOpenBtn.style.display = 'none';
     menuCloseBtn.style.display = 'inline-block';
 }
 
 function closeMenu() {
+    document.body.style.overflow = '';
     nav.classList.remove('active-menu');
     menuOpenBtn.style.display = 'inline-block';
     menuCloseBtn.style.display = 'none';
@@ -35,5 +37,5 @@ window.addEventListener('click', (e) => {
 
 /* ================= Apply shadow style to header when scroll down ================= */
 window.addEventListener('scroll', () => {
-    document.querySelector('header').classList.toggle('scrolled', window.scrollY > 0);
+    document.querySelector('header').classList.toggle('scrolled', window.scrollY > 44);
 });

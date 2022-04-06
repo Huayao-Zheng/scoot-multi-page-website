@@ -1,0 +1,61 @@
+@use '../function' as *;
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.footer {
+    background-color: #333a44;
+    padding-top: rem(64);
+    padding-bottom: rem(88);
+
+    &__logo {
+        display: flex;
+    }
+
+    &__logo:hover path {
+        fill: $yellow;
+    }
+
+    &__container,
+    &__nav-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__nav-list {
+        margin-top: rem(41);
+        margin-bottom: rem(85);
+        gap: rem(16);
+    }
+
+    &__social {
+        display: flex;
+        align-items: center;
+        gap: rem(24);
+    }
+
+    &__social-link {
+        display: flex;
+    }
+
+    &__social-link:hover path {
+        fill: $light-grey;
+    }
+}
+
+/* ================= Breakpoints (tablet) ================= */
+@include breakpoint-up(medium) {
+    .footer {
+        padding-top: rem(35);
+        padding-bottom: rem(32);
+
+        &__container,
+        &__nav-list {
+            flex-direction: row;
+        }
+
+        &__nav-list {
+            margin: 0 auto 0 rem(58);
+        }
+    }
+}

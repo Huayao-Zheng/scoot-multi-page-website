@@ -1,6 +1,6 @@
-@use '../function' as *;
-@use '../variables' as *;
-@use '../mixins' as *;
+@use '../../function' as *;
+@use '../../variables' as *;
+@use '../../mixins' as *;
 
 .hero {
     background: url(./assets/images/home-hero-desktop.jpg) no-repeat top 0 right 0;

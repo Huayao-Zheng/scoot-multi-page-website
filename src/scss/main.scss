@@ -1,3 +1,8 @@
 @use 'global';
 
-@use 'home';
+/* ========== pages ==========  */
+@use 'shared-components/headerNav';
+
+@use 'pages/home';
+
+@use 'shared-components/footer';
