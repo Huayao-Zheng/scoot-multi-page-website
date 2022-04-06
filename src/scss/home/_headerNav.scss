@@ -38,8 +38,13 @@ header.scrolled {
     }
 
     &__logo {
+        display: flex;
         margin: 0 auto;
+    }
+
+    &__logo svg {
         width: rem(75.5);
+        height: rem(20);
     }
 
     // background overlay
@@ -103,9 +108,9 @@ header.scrolled {
             display: none !important;
         }
 
-        &__logo {
-            margin: 0;
+        &__logo svg {
             width: rem(107);
+            height: rem(29);
         }
 
         &__desktop-nav {
