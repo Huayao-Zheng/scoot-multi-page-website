@@ -18,6 +18,21 @@ function closeMenu() {
     menuCloseBtn.style.display = 'none';
 }
 
+/* ================= Close mobile menu when Get Scootin cta is clicked ================= */
+const scootBtnOnMobileMenu = document.querySelector('.nav__menu .btn');
+
+scootBtnOnMobileMenu.addEventListener('click', closeMenu);
+
+/* ================= Close mobile menu when click outside of mobile menu ================= */
+window.addEventListener('click', (e) => {
+    const hasClickedOutside = !menu.contains(e.target);
+    const isMenuOpen = getComputedStyle(menu).getPropertyValue('left') === '0px';
+
+    if (hasClickedOutside && isMenuOpen) {
+        closeMenu();
+    }
+});
+
 /* ================= Apply shadow style to header when scroll down ================= */
 window.addEventListener('scroll', () => {
     document.querySelector('header').classList.toggle('scrolled', window.scrollY > 0);

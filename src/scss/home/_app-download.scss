@@ -1,0 +1,21 @@
+@use '../function' as *;
+@use '../variables' as *;
+@use '../mixins' as *;
+
+.app-download {
+}
+
+/*
+            <section class="app-download" id="app-download">
+                <div class="container">
+                    <h2>Sign up and Scoot off today</h2>
+
+                    <img src="assets/icons/app-store.svg" alt="apps tore" class="app-download__appstore" />
+                    <img
+                        src="assets/icons/google-play.svg"
+                        alt="google play"
+                        class="app-download__googleplay"
+                    />
+                </div>
+            </section>
+*/
