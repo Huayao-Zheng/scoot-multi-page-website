@@ -3,19 +3,90 @@
 @use '../mixins' as *;
 
 .app-download {
+    background-color: $dark-navy;
+    position: relative;
+    overflow: hidden;
+    padding-top: rem(88);
+    padding-bottom: rem(88);
+    z-index: 1;
+
+    &__circles {
+        position: absolute;
+        bottom: 0;
+        right: rem(-347 / 2);
+        z-index: -1;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: rem(40);
+    }
+
+    &__title {
+        @include headingsTypography(h4);
+        color: #fff;
+        text-align: center;
+        max-width: rem(301);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    &__download-methods {
+        display: flex;
+        justify-content: center;
+        gap: rem(13);
+    }
+    &__appstore,
+    &__googleplay {
+        cursor: pointer;
+    }
+
+    &__appstore {
+        width: rem(113.57);
+        height: rem(40);
+    }
+
+    &__googleplay {
+        width: rem(130);
+        height: rem(40);
+    }
 }
 
-/*
-            <section class="app-download" id="app-download">
-                <div class="container">
-                    <h2>Sign up and Scoot off today</h2>
+/* ================= Breakpoints (tablet) ================= */
+@include breakpoint-up(medium) {
+    .app-download {
+        padding-top: rem(62);
+        padding-bottom: rem(62);
 
-                    <img src="assets/icons/app-store.svg" alt="apps tore" class="app-download__appstore" />
-                    <img
-                        src="assets/icons/google-play.svg"
-                        alt="google play"
-                        class="app-download__googleplay"
-                    />
-                </div>
-            </section>
-*/
+        &__title {
+            @include headingsTypography(h2);
+            max-width: rem(457);
+        }
+    }
+}
+
+/* ================= Breakpoints (desktop) ================= */
+@include breakpoint-up(large) {
+    .app-download {
+        padding-top: rem(102);
+        padding-bottom: rem(102);
+
+        &__container {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &__title {
+            margin: 0;
+            text-align: left;
+        }
+
+        &__appstore,
+        &__googleplay {
+            width: auto;
+            height: auto;
+        }
+    }
+}

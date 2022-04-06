@@ -25,10 +25,10 @@ scootBtnOnMobileMenu.addEventListener('click', closeMenu);
 
 /* ================= Close mobile menu when click outside of mobile menu ================= */
 window.addEventListener('click', (e) => {
-    const hasClickedOutside = !menu.contains(e.target);
+    const hasClickedOutsideOfMenu = !menu.contains(e.target);
     const isMenuOpen = getComputedStyle(menu).getPropertyValue('left') === '0px';
 
-    if (hasClickedOutside && isMenuOpen) {
+    if (hasClickedOutsideOfMenu && isMenuOpen) {
         closeMenu();
     }
 });
