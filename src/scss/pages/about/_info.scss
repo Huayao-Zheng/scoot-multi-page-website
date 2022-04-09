@@ -4,7 +4,62 @@
 
 .about-info {
     max-width: 1440px;
-    padding-top: rem(120);
+    padding-top: rem(72);
     margin-left: auto;
     margin-right: auto;
+    overflow: hidden;
+
+    &__container {
+        display: grid;
+        row-gap: rem(120);
+    }
+
+    .block:nth-of-type(1) {
+        .block__arrow {
+            bottom: rem(32);
+            left: 0;
+        }
+    }
+
+    .block:nth-of-type(2) {
+        .block__arrow {
+            bottom: auto;
+            top: 0;
+            left: rem(-135);
+        }
+    }
+
+    .block:nth-of-type(2) {
+        .block__circle {
+            transform: translateX(calc(-100% - 4rem));
+        }
+    }
+}
+
+/* ================= Breakpoints (tablet) ================= */
+@include breakpoint-up(medium) {
+    .about-info {
+        .block:nth-of-type(1) {
+            .block__arrow {
+                left: rem(-130);
+            }
+        }
+
+        .block:nth-of-type(2) {
+            .block__arrow {
+                bottom: auto;
+                top: 0;
+                left: rem(-260);
+            }
+        }
+    }
+}
+
+/* ================= Breakpoints (desktop) ================= */
+@include breakpoint-up(large) {
+    .about-info {
+        .block:nth-of-type(2) {
+            flex-direction: row;
+        }
+    }
 }
