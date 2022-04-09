@@ -1,0 +1,10 @@
+@use '../../function' as *;
+@use '../../variables' as *;
+@use '../../mixins' as *;
+
+.about-info {
+    max-width: 1440px;
+    padding-top: rem(120);
+    margin-left: auto;
+    margin-right: auto;
+}
