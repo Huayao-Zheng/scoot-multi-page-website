@@ -1,0 +1,61 @@
+@use '../function' as *;
+@use '../variables' as *;
+@use '..//mixins' as *;
+
+.sub-hero {
+    background: url(./assets/images/about-hero-mobile.jpg) no-repeat center center/cover;
+    height: rem(160);
+    max-width: 1440px;
+    margin: 0 auto;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    &__title {
+        @include headingsTypography(h3);
+        color: #fff;
+    }
+}
+
+/* ================= Breakpoints (tablet) ================= */
+@include breakpoint-up(medium) {
+    .sub-hero {
+        background-image: url(./assets/images/about-hero-tablet.jpg);
+        height: rem(200);
+        position: relative;
+
+        &::before {
+            content: '';
+            background: url(./assets/patterns/white-circles.svg) no-repeat;
+            width: rem(234);
+            height: rem(63);
+            position: absolute;
+            top: 50%;
+            right: rem(-32);
+            transform: translateY(-50%);
+        }
+
+        &__container {
+            justify-content: start;
+        }
+
+        &__title {
+            padding-left: rem(65);
+        }
+    }
+}
+
+/* ================= Breakpoints (desktop) ================= */
+@include breakpoint-up(large) {
+    .sub-hero {
+        background-image: url(./assets/images/about-hero-desktop.jpg);
+
+        &__title {
+            padding-left: 0;
+        }
+    }
+}
