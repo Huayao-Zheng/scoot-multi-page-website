@@ -1,0 +1,77 @@
+@use '../function' as *;
+@use '../variables' as *;
+@use '..//mixins' as *;
+
+.our {
+    margin-top: rem(120);
+    color: $dark-navy;
+    text-align: center;
+
+    &__title {
+        @include headingsTypography(h4);
+        margin-bottom: rem(68);
+    }
+
+    &__container {
+        display: grid;
+        row-gap: rem(56);
+    }
+
+    &__img-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        height: 295px;
+        margin-bottom: rem(16);
+    }
+
+    &__img {
+        border-radius: 50%;
+    }
+
+    &__number {
+        @include headingsTypography(h5);
+        display: inline-block;
+        padding: rem(34);
+        border-radius: 50%;
+        background-color: $yellow;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &__sub-title {
+        margin-bottom: rem(27);
+    }
+
+    &__description {
+        max-width: rem(457);
+        margin: 0 auto;
+    }
+}
+
+/* ================= Breakpoints (tablet) ================= */
+@include breakpoint-up(medium) {
+    .our {
+        &__title {
+            @include headingsTypography(h2);
+            margin-bottom: rem(110);
+        }
+
+        &__img-container {
+            margin-bottom: rem(32);
+        }
+    }
+}
+
+/* ================= Breakpoints (desktop) ================= */
+@include breakpoint-up(large) {
+    .our {
+        &__container {
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: rem(30);
+        }
+    }
+}
