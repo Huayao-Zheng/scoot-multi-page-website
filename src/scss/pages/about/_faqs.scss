@@ -36,6 +36,7 @@
     }
 }
 
+/* ============= faq active style ============*/
 .faq.active .faq__answer {
     display: grid;
 }
@@ -76,58 +77,43 @@
     }
 }
 
-/*
- <section class="faqs">
-    <h2 class="faqs__title">FAQs</h2>
+/* ================= Breakpoints (tablet) ================= */
+@include breakpoint-up(medium) {
+    .faqs {
+        &__title {
+            @include headingsTypography(h3);
+            margin-bottom: rem(64);
+        }
 
-    <div class="container">
-        <div class="faqs__section">
-            <h3 class="faqs__section-title">How it works</h3>
+        .container {
+            gap: rem(64);
+        }
 
-            <div class="faqs__section-body">
-                <div class="faqs__faq faq">
-                    <h4 class="faq__question">How do I download the app?</h4>
+        &__category-title {
+            @include headingsTypography(h3);
+        }
 
-                    <img class="faq__arrow" src="assets/icons/chevron.svg" alt="arrow" />
+        &__category-body {
+            gap: rem(24);
+        }
+    }
 
-                    <div class="faq__answer">
-                        To download the Scoot app, you can search “Scoot” in both the App and
-                        Google Play stores. An even simpler way to do it would be to click the
-                        relevant link at the bottom of this page and you’ll be re-directed to the
-                        correct page.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-@mixin headingsTypography($h) {
-    @if $h == h1 {
-        font-size: rem(56);
-        line-height: rem(56);
-        letter-spacing: rem(-2.5);
-    } @else if $h == h2 {
-        font-size: rem(48);
-        line-height: rem(48);
-        letter-spacing: rem(-2.14);
-    } @else if $h == h3 {
-        font-size: rem(40);
-        line-height: rem(48);
-        letter-spacing: rem(-1.79);
-    } @else if $h == h4 {
-        font-size: rem(32);
-        line-height: rem(32);
-        letter-spacing: rem(-1.43);
-    } @else if $h == h5 {
-        font-size: rem(24);
-        line-height: rem(28);
-        letter-spacing: rem(-1.07);
-    } @else if $h == h6 {
-        font-size: rem(20);
-        line-height: rem(28);
-        letter-spacing: rem(-0.89);
+    .faq {
+        &__question {
+            @include headingsTypography(h5);
+        }
     }
 }
 
-*/
+/* ================= Breakpoints (desktop) ================= */
+@include breakpoint-up(large) {
+    .faqs {
+        &__category {
+            grid-template-columns: 30% auto;
+        }
+
+        &__category-title {
+            text-align: left;
+        }
+    }
+}
