@@ -1,0 +1,133 @@
+@use '../../function' as *;
+@use '../../variables' as *;
+@use '../../mixins' as *;
+
+.faqs {
+    margin: rem(120) 0;
+    color: $dark-navy;
+
+    &__title {
+        @include headingsTypography(h4);
+        margin-bottom: rem(48);
+        text-align: center;
+    }
+
+    .container,
+    &__category,
+    &__category-body {
+        display: grid;
+    }
+
+    .container {
+        gap: rem(48);
+    }
+
+    &__category {
+        gap: rem(32);
+    }
+
+    &__category-title {
+        @include headingsTypography(h5);
+        text-align: center;
+    }
+
+    &__category-body {
+        gap: rem(16);
+    }
+}
+
+.faq.active .faq__answer {
+    display: grid;
+}
+.faq.active .faq__arrow {
+    transform: rotate(0);
+}
+
+.faq {
+    display: grid;
+    row-gap: rem(24);
+    padding: rem(32);
+    background-color: $snow;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $light-yellow;
+    }
+
+    &__qa-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__question {
+        font-size: rem(18);
+        line-height: rem(24);
+        letter-spacing: rem(-0.8);
+    }
+
+    &__arrow {
+        transform: rotate(180deg);
+    }
+
+    &__answer {
+        display: none;
+        color: $dark-navy;
+    }
+}
+
+/*
+ <section class="faqs">
+    <h2 class="faqs__title">FAQs</h2>
+
+    <div class="container">
+        <div class="faqs__section">
+            <h3 class="faqs__section-title">How it works</h3>
+
+            <div class="faqs__section-body">
+                <div class="faqs__faq faq">
+                    <h4 class="faq__question">How do I download the app?</h4>
+
+                    <img class="faq__arrow" src="assets/icons/chevron.svg" alt="arrow" />
+
+                    <div class="faq__answer">
+                        To download the Scoot app, you can search “Scoot” in both the App and
+                        Google Play stores. An even simpler way to do it would be to click the
+                        relevant link at the bottom of this page and you’ll be re-directed to the
+                        correct page.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@mixin headingsTypography($h) {
+    @if $h == h1 {
+        font-size: rem(56);
+        line-height: rem(56);
+        letter-spacing: rem(-2.5);
+    } @else if $h == h2 {
+        font-size: rem(48);
+        line-height: rem(48);
+        letter-spacing: rem(-2.14);
+    } @else if $h == h3 {
+        font-size: rem(40);
+        line-height: rem(48);
+        letter-spacing: rem(-1.79);
+    } @else if $h == h4 {
+        font-size: rem(32);
+        line-height: rem(32);
+        letter-spacing: rem(-1.43);
+    } @else if $h == h5 {
+        font-size: rem(24);
+        line-height: rem(28);
+        letter-spacing: rem(-1.07);
+    } @else if $h == h6 {
+        font-size: rem(20);
+        line-height: rem(28);
+        letter-spacing: rem(-0.89);
+    }
+}
+
+*/

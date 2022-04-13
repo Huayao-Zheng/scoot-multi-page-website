@@ -39,3 +39,12 @@ window.addEventListener('click', (e) => {
 window.addEventListener('scroll', () => {
     document.querySelector('header').classList.toggle('scrolled', window.scrollY > 44);
 });
+
+/* ================= handle FAQs toggle ================= */
+const faqs = document.querySelectorAll('.faq');
+
+faqs.forEach((faq) => {
+    faq.addEventListener('click', () => {
+        faq.classList.toggle('active');
+    });
+});
