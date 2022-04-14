@@ -1,0 +1,32 @@
+@use '../../function' as *;
+@use '../../variables' as *;
+@use '../../mixins' as *;
+
+.join {
+    max-width: 1440px;
+    margin: rem(72) auto 0;
+
+    .block__arrow {
+    }
+
+    .btn {
+        cursor: pointer;
+    }
+}
+
+/* ================= Breakpoints (tablet) ================= */
+@include breakpoint-up(medium) {
+    .join {
+        margin-top: rem(144);
+        .block__arrow {
+            left: -120px;
+        }
+    }
+}
+
+/* ================= Breakpoints (desktop) ================= */
+@include breakpoint-up(large) {
+    .join {
+        margin-top: rem(120);
+    }
+}
