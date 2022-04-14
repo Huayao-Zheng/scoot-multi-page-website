@@ -1,0 +1,143 @@
+@use '../../function' as *;
+@use '../../variables' as *;
+@use '../../mixins' as *;
+
+.map {
+    margin-top: rem(72);
+
+    &__container {
+        display: grid;
+        row-gap: rem(16);
+    }
+
+    &__img {
+        background: url(./assets/images/world-map-mobile.png) no-repeat center center/cover;
+        height: rem(152);
+    }
+
+    &__img,
+    &__countries {
+        width: rem(311);
+        margin: 0 auto;
+    }
+
+    &__countries {
+        display: grid;
+        place-items: center;
+        font-size: rem(24);
+        line-height: rem(28);
+        letter-spacing: rem(-1.07);
+        height: rem(72);
+        color: $dark-navy;
+        background-color: $light-yellow;
+    }
+}
+
+/* ================= Breakpoints (tablet) ================= */
+@include breakpoint-up(medium) {
+    .map {
+        margin-top: rem(144);
+
+        &__container {
+            position: relative;
+            width: rem(689);
+            margin: 0 auto;
+        }
+
+        &__img {
+            background-image: url(./assets/images/world-map-tablet.png);
+            width: 100%;
+            height: rem(337);
+        }
+
+        &__countries {
+            position: absolute;
+            width: rem(120);
+            height: rem(32);
+            font-size: rem(13);
+            line-height: rem(28);
+            letter-spacing: rem(-0.58);
+            background-color: $yellow;
+
+            &::before {
+                content: '';
+                background-color: red;
+                height: rem(12);
+                width: rem(12);
+                position: absolute;
+                bottom: 0;
+                transform: translateY(50%) rotate(45deg);
+                background-color: $yellow;
+            }
+        }
+
+        &__new-york {
+            top: 52px;
+            left: 98px;
+        }
+
+        &__london {
+            top: 25px;
+            left: 243px;
+        }
+
+        &__jakarta {
+            bottom: 128px;
+            right: 89px;
+        }
+
+        &__yokohama {
+            top: 65px;
+            right: 39px;
+        }
+    }
+}
+
+/* ================= Breakpoints (desktop) ================= */
+@include breakpoint-up(larger) {
+    .map {
+        &__container {
+            position: relative;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        &__img {
+            background-image: url(./assets/images/world-map-desktop.png);
+            height: rem(543);
+        }
+
+        &__countries {
+            width: rem(189);
+            height: rem(72);
+            font-size: rem(24);
+            line-height: rem(28);
+            letter-spacing: rem(-1.07);
+
+            &::before {
+                height: rem(24);
+                width: rem(24);
+            }
+        }
+
+        &__new-york {
+            top: 71.44px;
+            left: 147px;
+        }
+
+        &__london {
+            top: 18px;
+            left: 393px;
+        }
+
+        &__jakarta {
+            bottom: 219.81px;
+            right: 142px;
+        }
+
+        &__yokohama {
+            top: 78px;
+            right: 65px;
+        }
+    }
+}
