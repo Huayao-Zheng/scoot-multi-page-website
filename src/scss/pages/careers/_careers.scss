@@ -1,0 +1,82 @@
+@use '../../function' as *;
+@use '../../variables' as *;
+@use '../../mixins' as *;
+
+.careers {
+    margin-top: rem(145);
+    margin-bottom: rem(120);
+
+    .container {
+        display: grid;
+        gap: rem(16);
+    }
+
+    &__position {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: rem(16);
+        background-color: $snow;
+        padding: rem(32);
+        width: rem(311);
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    &__position__title {
+        color: $dark-navy;
+        font-size: rem(18);
+        line-height: rem(24);
+        letter-spacing: rem(-0.8);
+        margin-bottom: rem(4);
+    }
+
+    &__position__location {
+        color: $dark-navy;
+    }
+
+    .btn {
+        width: rem(247);
+        height: rem(53);
+        cursor: pointer;
+    }
+}
+
+/* ================= Breakpoints (tablet) ================= */
+@include breakpoint-up(medium) {
+    .careers {
+        margin-top: rem(120);
+
+        &__position {
+            width: 100%;
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: left;
+            padding-left: rem(48);
+            padding-right: rem(48);
+        }
+
+        &__position__title {
+            @include headingsTypography(h5);
+            margin-bottom: rem(8);
+        }
+
+        .btn {
+            width: rem(180);
+            height: rem(53);
+        }
+    }
+}
+
+/* ================= Breakpoints (desktop) ================= */
+@include breakpoint-up(large) {
+    .careers {
+        margin-bottom: rem(160);
+
+        .container {
+            gap: rem(24);
+        }
+    }
+}
